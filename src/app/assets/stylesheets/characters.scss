@@ -12,6 +12,7 @@
     display: flex;
     border-bottom: 1px dotted $shinyBlue;
     padding: 12px 6px;
+    justify-content: center;
     &.headers {
         font-weight: bold;
         text-transform: uppercase;
@@ -25,20 +26,52 @@
         cursor: pointer;
         background-color: rgba(255, 255,  255, 0.1);
     }
-    .name {
-        width: 15%;
-        border-right: 1px dotted $shinyBlue;
-        overflow: hidden;
-        padding-right: 12px;
-    }
-    .power, .level, .gear, .iso, .class {
+    .name, .power, .level, .gear, .iso, .class, .stars, .abilities, .goal {
         width: 5%;
         border-right: 1px dotted $shinyBlue;
         overflow: hidden;
         padding: 0 12px;
         text-align: center;
+        &.true {
+            color: $green;
+        }
+    }
+    .name {
+        width: 20%;
+        border-left: 1px dotted $shinyBlue;
+        overflow: hidden;
+        padding-right: 12px;
+        text-align: left;
     }
     .class {
         width: 10%;
+    }
+    .stars {
+        width: 12%;
+    }
+    .abilities {
+        width: 10%;
+    }
+}
+
+.star {
+    margin: 0 2px;
+    font-size: 0.8em;
+    &.red {
+        color: $red;
+    }
+    &.yellow {
+        color: $yellow
+    }
+}
+
+.ability {
+    margin: 0 4px;
+    border: 1px dotted #fff;
+    border-radius: 100%;
+    padding: 4px;
+    &.true {
+        color: $green;
+        border-color: green;
     }
 }

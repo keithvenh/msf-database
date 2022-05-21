@@ -2,7 +2,6 @@ require 'csv'
 require 'json'
 
 db = CSV.parse(File.read(File.join(File.dirname(__FILE__), '/msfList.csv')), headers: true);
-puts db.length
 
 json = []
 

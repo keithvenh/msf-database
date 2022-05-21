@@ -14,10 +14,12 @@ function Characters() {
             
                 <h2 className='name'>Name</h2>
                 <p  className='power'>Power</p>
+                <p  className='stars'>Stars</p>
                 <p className='level'>Level</p>
                 <p className='gear'>Gear</p>
                 <p className='iso'>Iso-8</p>
-                <p className='class'>Iso-8 Class</p>
+                <p className='abilities'>Abilities</p>
+                <p className='goal'>Goal</p>
 
             </div>
             {characters}

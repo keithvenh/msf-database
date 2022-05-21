@@ -1,0 +1,26 @@
+@import 'variables';
+
+.header {
+    margin: 12px 0 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9em;
+}
+
+.links {
+    display: flex;
+    border-bottom: 2px solid $shinyBlue;
+}
+
+.link {
+    border: 1px solid $shinyBlue;
+    border-bottom: none;
+    padding: 6px 12px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 6px;
+    &:hover, &.active {
+        background-color: $shinyBlue;
+        color: $dark;
+        cursor: pointer;
+    }
+}

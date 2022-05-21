@@ -5,7 +5,7 @@ function CharacterLink(props) {
     const goalLevel = calculateGoalLevel(props.character);
     const minion = props.character.tags.includes('Minion') ? '' : <span className={`ability ${goalLevel.ultimate >= props.character.goals.tier}`}>{props.character.abilities.ultimate}</span>;
     return (
-        <div className='characterLink'>
+        <div className='characterLink' onClick={() => props.viewCharacter('character', props.character)}>
             
             <h2 className='name'>{props.character.name}</h2>
             <p  className='power'>{props.character.power}</p>

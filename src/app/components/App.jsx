@@ -3,6 +3,8 @@ import { db } from '../../db/db';
 import Header from './header/Header';
 import Dashboard  from './dashboard/Dashboard';
 import Characters from './characters/Characters';
+import Character from './characters/Character';
+import { findRenderedComponentWithType } from 'react-dom/test-utils';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,12 +17,15 @@ class App extends React.Component {
     this.updateView = this.updateView.bind(this);
   }
 
-  updateView(page) {
+  updateView(page, character='') {
     let view = '';
 
     switch(page) {
+      case 'character':
+        view = <Character character={character} />
+        break;
       case 'characters':
-        view = <Characters />
+        view = <Characters viewCharacter={this.updateView} />
         break;
       case 'dashboard':
         view = <Dashboard />;

@@ -75,3 +75,44 @@
         border-color: green;
     }
 }
+
+// ===== CHARACTER VIEW PAGE ===== //@at-root
+
+.character {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .characterName {
+        margin-top: 12px;
+        margin-bottom: 6px;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+    .characterStars {
+        font-size: 28px;
+    }
+    .characterShardsContainer {
+        height: 20px;
+        width: 200px;
+        border: 1px solid $blue;
+        margin: 6px;
+    }
+    .characterShards {
+        height: 100%;
+        background-color: $blue;
+        line-height: 18px;
+        text-align: left;
+        position: relative;
+        p {
+            padding-left: 6px;
+            position: absolute;
+            width: 188px;
+            display: flex;
+            justify-content: center;
+            font-size: 14px;
+            letter-spacing: 3px;
+        }
+    }
+}

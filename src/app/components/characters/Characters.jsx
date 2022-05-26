@@ -1,5 +1,5 @@
 import React from 'react';
-import { db } from '../../../db/db';
+import { roster } from '../../../db/db';
 import CharacterLink from './CharacterLink';
 import Character from './Character';
 import Dashboard from '../dashboard/Dashboard';
@@ -29,7 +29,7 @@ class Characters extends React.Component {
         this.sortCharacters();
     }
 
-    sortCharacters(sort_by = this.state.sort_by, characters = db) {
+    sortCharacters(sort_by = this.state.sort_by, characters = roster) {
 
         if(sort_by == 'stars') {
             characters.sort((a, b) => {

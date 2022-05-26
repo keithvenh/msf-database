@@ -1,18 +1,40 @@
+import { roster } from '../../../db/db';
 function Character(props) {
 
     const shards = [15, 30, 55, 80, 130, 200, 300]
     let width = (props.character.shards / shards[props.character.stars]) * 100;
-    let grey = '#999999';
-    let green = '#33dd33';
-    let blue = '#66ccff';
-    let purple = '#cc00dd';
-    let orange = '#ff9900';
-    let teal = '#00ffaa';
-    let gearColors = [grey, grey, green, green, green, blue, blue, blue, blue, purple, purple, purple, purple, orange, orange, orange, orange, teal, teal]
+    const grey = '#999999';
+    const green = '#33dd33';
+    const blue = '#66ccff';
+    const purple = '#cc00dd';
+    const orange = '#ff9900';
+    const teal = '#00ffaa';
+    const gearColors = [grey, grey, green, green, green, blue, blue, blue, blue, purple, purple, purple, purple, orange, orange, orange, orange, teal, teal];
+    const synergies = props.character.synergies.map((syn) => {
+    
+                    let synergies = roster.filter((char) => {
+                        if(char.name == syn || char.tags.includes(syn)) {
+                            return char;
+                        }
+                    });
+
+                    let chars = synergies.map((char) => {return <p className='charName'>{char.name}</p>})
+                    return (
+                        <div className='synergyContainer'>
+                            <p className='synergy'>{syn}</p>
+                            {chars}
+                        </div>
+
+                    )
+    })
     return (
         <div className='character'>
             <div className='characterSide'>
                 <p className="characterLevel">{props.character.level}</p>
+
+                <div className="characterSynergies">
+                    {synergies}
+                </div>
             </div>
             
             <div className='characterCenter'>
@@ -35,7 +57,7 @@ function Character(props) {
 
             </div>
             <div className='characterSide'>
-                <p className='characterGear' style={{ "border-color": gearColors[props.character.gear.tier] }}>{props.character.gear.tier}</p>
+                <p className='characterGear' style={{ "borderColor": gearColors[props.character.gear.tier] }}>{props.character.gear.tier}</p>
             </div>
 
         </div>

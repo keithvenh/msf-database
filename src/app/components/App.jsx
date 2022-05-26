@@ -1,9 +1,9 @@
 import React from 'react';
-import { db } from '../../db/db';
 import Header from './header/Header';
 import Dashboard  from './dashboard/Dashboard';
 import Characters from './characters/Characters';
 import Character from './characters/Character';
+import Legendaries from './legendaries/Legendaries';
 import { findRenderedComponentWithType } from 'react-dom/test-utils';
 
 class App extends React.Component {
@@ -29,6 +29,9 @@ class App extends React.Component {
         break;
       case 'dashboard':
         view = <Dashboard />;
+        break;
+      case 'legendaries':
+        view = <Legendaries />
         break;
       default:
         view = <Dashboard />;
